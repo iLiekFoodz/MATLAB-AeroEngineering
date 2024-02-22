@@ -38,5 +38,5 @@ t = 1:1:10;
 %Primary equation for calculating the inductance.
 tango = V/abs(Z)*((cos((w.*t)-o))-((exp(-t.*R/L))*cos(o)))
 
-plot(t, tango, '--r'), ylabel('Y-Axis'), xlabel('X-Axis'), grid
+plot(t, tango, '--r'), ylabel('Y-Axis'), xlabel('X-Axis'), title('I(t)'), grid
 
