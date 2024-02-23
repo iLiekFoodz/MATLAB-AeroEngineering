@@ -1,36 +1,55 @@
 %Nouh Shaikh
-%Lab 4 Homework Script 1
+%Lab 4 Homework Script 2
 
+%Question 2 for Lab 4
+%In this Script we are calculating the inductance
 clear,clc
-% A pipeline at an oil refinery is carrying oil to a large storage tank. The pipe
-% has a 20 inch internal diameter. The oil is flowing at 5 ft/s and its density is
-% 57 lb/ft3. What is the mass flow rate of oil in SI units? What is the mass and
-% volume of oil, in SI units, that flows in a 24 hour period? The flow rate of oil
-% is given by: 𝑚̇ = pvA
+%Notes below the input code indicate the designated value to be inputed for
+%the question given in LAB.
 
-%Question 1 for Lab 4
+%User inputs the value for Voltage.
+V = input('Input the Voltage (V):');
+% V = 230
 
-%Flow Rate [ft/s -> m/s]
-FlowRate = input('Enter the Flow Rate in (ft/s):');
-FA1 = FlowRate/3.2808399;
+%User inputs the value for Hertz.
+f = input('Input the Hertz (Hz):');
+%f = 50 
 
-%Liquid Density [lb/ft3 -> kg/m3]
-LiquidDensity = input('Enter the Liquid Density in (lb/ft^3):');
-LDA1 = LiquidDensity*16.0184634;
+%User inputs the value for Omega.
+R = input('Input the Omega Value:');
+%R = 500 
 
-%Internal Diameter [lb/ft3 -> kg/m3]
-InternalDiameter = input('Enter the Internal Diamemeter in (inches):');
-IDA1 = InternalDiameter/39.3700787;
+%User inputs the value for Inductance. 
+L1 = input('Input the Inductance Value (mH):');
+L = L1*0.001;
+%L = 650
 
-%Converting meters to radius
-Radius = IDA1/2;
-%Finding the Area
-Area = pi.*(Radius).^2;
+%Calculation for W to rad/s
+w = 2*pi*(f);
 
-%Providing the solution Mass Flow Rate of Oil
+%Calculations for O
+o = atan(w*L/R);
 
-MFRO = LDA1.*FA1.*Area;
+%Calculations for Z
+Z = R+1i*w*L;
 
-%Displaying the flow rate. 
-disp('The flow rate is:')
-disp(MFRO)
+%User inputs the value for t.
+t = input('Enter the value of time in seconds:'); 
+
+%Generating plotting x-values
+tplot = t-.1:.001:t+.1;
+
+yplot = V/abs(Z)*((cos((w.*tplot)-o))-((exp(-tplot.*R/L))*cos(o)));
+
+%Primary equation for calculating the inductance.
+tango = V/abs(Z)*((cos((w.*t)-o))-((exp(-t.*R/L))*cos(o)));
+
+%Plotting the graph with the point of time provided by the user. 
+plot(tplot, yplot, 'r'), ylabel('Y-Axis'), xlabel('X-Axis'), title('I(t)'), grid
+hold on
+plot(t,tango,'b','Marker','*')
+hold off
+
+%Displaying the Inductance value calculated. 
+disp('The Inductance Value is:')
+disp(tango)
