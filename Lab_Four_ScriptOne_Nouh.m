@@ -31,9 +31,6 @@ Area = pi.*(Radius).^2;
 
 MFRO = LDA1.*FA1.*Area;
 
+%Displaying the flow rate. 
 disp('The flow rate is:')
 disp(MFRO)
-
-
-
-
