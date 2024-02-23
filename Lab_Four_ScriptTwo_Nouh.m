@@ -44,11 +44,12 @@ yplot = V/abs(Z)*((cos((w.*tplot)-o))-((exp(-tplot.*R/L))*cos(o)));
 %Primary equation for calculating the inductance.
 tango = V/abs(Z)*((cos((w.*t)-o))-((exp(-t.*R/L))*cos(o)));
 
-
+%Plotting the graph with the point of time provided by the user. 
 plot(tplot, yplot, 'r'), ylabel('Y-Axis'), xlabel('X-Axis'), title('I(t)'), grid
 hold on
 plot(t,tango,'b','Marker','*')
 hold off
 
+%Displaying the Inductance value calculated. 
 disp('The Inductance Value is:')
 disp(tango)
