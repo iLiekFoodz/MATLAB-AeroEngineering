@@ -1,5 +1,7 @@
 clear, clc
-%Lab 6 Nouh Shaikh - Decison Making
+%Question 1
+%Nouh Shaikh - Lab 6 
+%Decison Making
 
 % Evaluate the following: 
                     
@@ -13,7 +15,4 @@ y = 8/2 < 5*3+1 > 9
 y = 8/(2<5).*3+(1>9)
 
 %Q1D
-2+4*3 ~= 60/4-1
-
-
- 
+2+4*3 ~= 60/4-1 
