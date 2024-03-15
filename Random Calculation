@@ -1,0 +1,15 @@
+clear, clc
+
+g = 9.8;
+v = 75;
+theta = pi/6;
+h = 0;
+t = 0;
+
+     while (h>=0)
+
+    t=t+0.00001;
+
+    h = v*t*sin(theta)-0.5*g*t^2
+
+      end
