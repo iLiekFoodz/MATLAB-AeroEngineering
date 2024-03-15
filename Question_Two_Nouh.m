@@ -1,7 +1,8 @@
 clc,clear
+
 % Nouh Shaikh
 % Lab 7 Homework 
-% Question 3
+% Question 2
 
 
 % Given the vector x=[1 8 3 9 0 1] use a for loop to:
